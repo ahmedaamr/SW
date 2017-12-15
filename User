@@ -1,0 +1,82 @@
+import java.util.Scanner;
+import java.util.Vector;
+
+import javax.print.DocFlavor.INPUT_STREAM;
+
+
+public class User {
+
+	
+	String userName,password,mail,address;
+	int userID,phone;
+	String userType;
+	boolean Active=false;
+	
+	
+	public static void Register (Vector<User> users)   // eslam
+	{
+		int choice;
+		User user=new User();
+		System.out.println("Register As : ");
+		System.out.println("1) StoreOwner. ");
+		System.out.println("2) Buyer.");
+        Scanner input=new Scanner(System.in);
+        choice=input.nextInt();
+        
+        if(choice ==1)
+        {
+         	input.nextLine();
+        	System.out.println("Enter UserName ");
+        	user.userName=input.nextLine();
+        	
+        	System.out.println("Enter Password ");
+        	user.password=input.nextLine();
+        	
+        	user.userID=(users.size()+120)%3;
+        	
+        	System.out.println("Enter mail ");
+        	user.mail=input.nextLine();
+        	
+        	System.out.println("Enter address ");
+        	user.address=input.nextLine();
+        	System.out.println("Enter phone ");
+        	user.phone=input.nextInt();
+        	
+        	user.userType="StoreOwner";
+        	user.Active=true;
+        	
+        	users.add(user);
+        	
+        }
+        else if(choice ==2)
+        {
+        	input.nextLine();
+        	System.out.println("Enter UserName ");
+        	user.userName=input.nextLine();
+        	
+        	System.out.println("Enter Password ");
+        	user.password=input.nextLine();
+        	
+        	user.userID=(users.size()+120)%3;
+        	
+        	System.out.println("Enter mail ");
+        	user.mail=input.nextLine();
+        	
+        	System.out.println("Enter address ");
+        	user.address=input.nextLine();
+        	System.out.println("Enter phone ");
+        	user.phone=input.nextInt();
+        	
+        	user.userType="Buyer";
+        	user.Active=true;
+       
+        	users.add(user);
+        	
+        }
+        else 
+    		System.out.println("Wrong Choice !!! ");
+
+	}
+  
+  
+  }
