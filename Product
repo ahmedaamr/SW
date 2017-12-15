@@ -1,0 +1,12 @@
+
+public class Product {
+
+	String PName;
+	double Price;
+	String BrandName;
+	String ProductType;
+	String StoreName;
+	int Quantity;
+	int Counter=0;
+
+}
