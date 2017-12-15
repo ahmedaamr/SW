@@ -77,6 +77,109 @@ public class User {
     		System.out.println("Wrong Choice !!! ");
 
 	}
-  
+  	public static void GetInfo(Vector<User> users, User user)   // Ahmed Amr
+	{
+		
+		for (int i=0;i<users.size();i++)
+		{
+			if(user.userName.equals(users.get(i).userName ) && user.password.equals(users.get(i).password) )
+			{
+				System.out.println("1)userName : "+users.get(i).userName);
+				System.out.println("2)Password : "+users.get(i).password);
+				System.out.println("3)UserID: "+users.get(i).userID);
+				System.out.println("4)Mail : "+users.get(i).mail);
+				System.out.println("5)Phone : "+users.get(i).phone);
+				System.out.println("6)Address : "+users.get(i).address);
+				break;
+			}
+			
+		}
+	
+	}
+	public static void UpdateInfo(Vector<User> users, User user)  //Ahmed Amr
+	{
+		int idx=0;
+		
+		for (int i=0;i<users.size();i++)
+		{
+			if(user.userName.equals(users.get(i).userName ) && user.password.equals(users.get(i).password) )
+			{
+				System.out.println("1)userName : "+users.get(i).userName);
+				System.out.println("2)Password : "+users.get(i).password);
+				System.out.println("3)Mail : "+users.get(i).mail);
+				System.out.println("4)Phone : "+users.get(i).phone);
+				System.out.println("5)Address : "+users.get(i).address);
+				idx=i;
+				break;
+			}
+			
+		}
+		
+		int c;
+		
+		Scanner input=new Scanner(System.in);
+		 c = input.nextInt();
+		 
+		 
+		 if(c==1)
+		 {
+			 input.nextLine();
+			users.get(idx).userName= input.nextLine();
+		 }
+
+		 else if(c==2)
+		 {
+			 input.nextLine();
+			 users.get(idx).password= input.nextLine();
+		 }
+				
+		 else if(c==3)
+		 {
+			 input.nextLine();
+			 users.get(idx).mail= input.nextLine();
+		 }
+				
+		 else if(c==4)
+				users.get(idx).phone= input.nextInt();
+		 
+		 else if(c==5)
+				users.get(idx).address= input.nextLine();
+	}
+	
+	
+	
+	public static void ViewSpecificProductDetails (Vector<Product> p)  //Ahmed Amr
+	{
+		
+		System.out.println("Products Names : ");
+		
+		for(int i=0 ;i <p.size();i++)
+		{
+			System.out.println(p.get(i).PName);
+		}
+		
+		String choice;
+		Scanner input =new Scanner(System.in);
+		
+		System.out.println("Enter Prdouct Name to view details :");
+		choice=input.nextLine();
+		
+		for(int j=0 ; j < p.size();j++)
+		{
+			
+			if(choice.equals(p.get(j).PName))
+			{
+				System.out.println("Name : "+p.get(j).PName);
+				System.out.println("Price : "+p.get(j).Price);
+				System.out.println("Product type : "+p.get(j).ProductType);
+				System.out.println("Brand Name : "+p.get(j).BrandName);
+				System.out.println("Quantity : "+p.get(j).Quantity);
+				System.out.println("storeName : "+p.get(j).StoreName);
+				p.get(j).Counter++;
+				
+			}
+		}
+	}
+	
   
   }
